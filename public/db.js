@@ -1,10 +1,10 @@
 let db;
 const request = window.indexedDB.open("budgetdb", 1);
 
-request.onupgradeneeded = function (target) {
-    const db = target.result;
-    db.createObjectStore("temp", {autoIncrement: true});
-}
+request.onupgradeneeded = ({ target }) => {
+    let db = target.result;
+    db.createObjectStore("temp", { autoIncrement: true });
+  };
 
 request.onerror = function (e) {
     console.log("There was an error" + e.target.errorCode);
@@ -34,8 +34,8 @@ function checkDatabase() {
                     "Content-Type": "application/json"
                 }
             })
-            .then(res => {
-                return res.json();
+            .then(response => {
+                return response.json();
             })
             .then(() => {
                 const transaction = db.transaction(["temp"], "readwrite");
