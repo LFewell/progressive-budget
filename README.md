@@ -2,7 +2,7 @@
 # Description
 This application will allow the user to add and subtract expenses online and offline.
 
-Live deploy at 
+Live deploy at https://stormy-hollows-52479.herokuapp.com/
 -----------------------------
 ## Table of Contents
 
