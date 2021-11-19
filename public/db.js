@@ -1,9 +1,8 @@
-
 let db;
 const request = window.indexedDB.open("budgetdb", 1);
 
-request.onupgradeneeded = function (e) {
-    const db = e.target.result;
+request.onupgradeneeded = function (target) {
+    const db = target.result;
     db.createObjectStore("temp", {autoIncrement: true});
 }
 
