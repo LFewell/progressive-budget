@@ -1,3 +1,4 @@
+
 let db;
 const request = window.indexedDB.open("budgetdb", 1);
 
